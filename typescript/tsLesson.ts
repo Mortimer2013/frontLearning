@@ -83,7 +83,7 @@ function* test6() {
     console.log("finished");
 }
 //需要被赋值给一个变量
-var tt = test6();
+var tt = new test6();
 //通过变量调用方法的next()方法才能启动方法
 tt.next();//停在yield关键字处
 tt.next();//继续执行函数
@@ -95,7 +95,7 @@ function* getStockPrice() {
     }
 }
 
-var stock = getStockPrice();
+var stock = new getStockPrice();
 var limitPrice = 15;
 var price = 100;
 //直到股票价格小于limitPrice时停止循环
@@ -173,7 +173,8 @@ var val3=new test9("ibm");
 //for循环
 //forEach循环
 var arr = [1, 2, 3, 4, 5];
-arr.desc = "five numbers";
+//typescript中数组无法定义属性，但是js里不会报错，只是测试用
+//arr.desc = "five numbers";
 //打印数组中所有的值，不能中断
 arr.forEach(val => console.log(val));
 //for in循环。打印数组中所有的key。在JavaScript中，所有对象和集合都是键值对
@@ -262,7 +263,7 @@ export function func11() {
 
 }
 //模块中通过import导入其它模块的属性，方法和类进行使用
-import {xxx} from "xx"
+//import {xxx} from "xx"
 
 
 
