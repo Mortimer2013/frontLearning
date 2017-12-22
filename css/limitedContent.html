@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>如何限制元素内容长度的示例</title>
+    <style type="text/css">
+        .a_limited {
+            width: 180px;
+            display: block;
+            overflow: hidden;
+            word-break: keep-all;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .span_multi_line_limitd {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3; /*只适用于使用webkit内核的浏览器及移动端*/
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div style="width: 220px;">
+    <a href="http://www.baidu.com" class="a_limited">虽然百度是一家比较恶心的企业，但是他们做的部分工具还是比较好用的</a>
+</div>
+<br/>
+<div style="width: 400px;">
+    <span class="span_multi_line_limitd">Webstorm真是一个牛逼的前端开发IDE，如果不是价格太贵的话，肯定支持正版了。外国公司，更确切地说，是捷克公司还是不了解中国国情啊。如果将每个授权价格按照RMB收费而不是现在的美元的话，我想买正版的用户数量应该会增加至少7倍吧，现在国内的版权氛围还是比以前强不少的。</span>
+</div>
+</body>
+</html>
